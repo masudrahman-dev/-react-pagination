@@ -9,14 +9,14 @@ const items = [...Array(1000)].map((l, i) => i + 1);
 
 function Items({ currentItems }) {
   return (
-    <>
+    <div className="flex justify-center gap-6">
       {currentItems &&
         currentItems.map((item) => (
           <div>
             <h3>Item #{item}</h3>
           </div>
         ))}
-    </>
+    </div>
   );
 }
 
@@ -50,22 +50,16 @@ function PaginatedItems({ itemsPerPage }) {
       <ReactPaginate
         breakLabel="..."
         nextLabel={<ArrowLeft />}
-        className="flex items-center gap-3 justify-center"
+        className="flex items-center justify-center gap-3"
         onPageChange={handlePageClick}
         pageRangeDisplayed={10}
         pageCount={pageCount}
         previousLabel={<ArrowRight />}
         renderOnZeroPageCount={null}
-        breakClassName=""
-        breakLinkClassName=""
-        containerClassName=""
-        activeLinkClassName=""
         activeClassName="bg-black text-white "
-        disabledClassName=""
-        disabledLinkClassName=""
-        nextLinkClassName=""
-        nextClassName="border"
-        pageClassName="hover:bg-gray-200  rounded-md  py-1 px-3"
+        previousClassName="  rounded-md  p-2 border hover:border-2 hover:border-gray-500"
+        nextClassName="  rounded-md  p-2 border hover:border-2 hover:border-gray-500"
+        pageClassName="hover:bg-gray-200  rounded-md  px-3 p-1"
       />
     </>
   );
