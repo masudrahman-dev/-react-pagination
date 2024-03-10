@@ -5,14 +5,14 @@ import ArrowRight from "./icons/ArrowRight";
 
 // Example items, to simulate fetching from another resources.
 // const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
-const items = [...Array(1000)].map((l, i) => i + 1);
+const items = [...Array(500)].map((l, i) => i + 1);
 
 function Items({ currentItems }) {
   return (
     <div className="flex justify-center gap-6">
       {currentItems &&
         currentItems.map((item) => (
-          <div>
+          <div key={item}>
             <h3>Item #{item}</h3>
           </div>
         ))}
@@ -50,9 +50,9 @@ function PaginatedItems({ itemsPerPage }) {
       <ReactPaginate
         breakLabel="..."
         nextLabel={<ArrowLeft />}
-        className="flex items-center justify-center gap-3"
+        className="flex  items-center justify-center gap-3 "
         onPageChange={handlePageClick}
-        pageRangeDisplayed={10}
+        // pageRangeDisplayed={0}
         pageCount={pageCount}
         previousLabel={<ArrowRight />}
         renderOnZeroPageCount={null}
@@ -67,7 +67,7 @@ function PaginatedItems({ itemsPerPage }) {
 
 const App = () => {
   return (
-    <div className="container mx-auto mt-20">
+    <div className="container  mx-auto mt-20">
       <div>
         <PaginatedItems itemsPerPage={4} />
       </div>
