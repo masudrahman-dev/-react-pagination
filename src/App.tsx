@@ -32,7 +32,7 @@ function PaginatedItems({ itemsPerPage }) {
   console.log(`Loading items from ${itemOffset} to ${endOffset}`);
   const currentItems = items.slice(itemOffset, endOffset);
   const pageCount = Math.ceil(items.length / itemsPerPage);
-
+  // console.log("pageCount :>> ", pageCount);
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % items.length;
@@ -47,19 +47,21 @@ function PaginatedItems({ itemsPerPage }) {
       <Items currentItems={currentItems} />
       <br />
       <br />
+
       <ReactPaginate
         breakLabel="..."
         nextLabel={<ArrowLeft />}
         className="flex  items-center justify-center gap-3 "
         onPageChange={handlePageClick}
-        // pageRangeDisplayed={0}
+        pageRangeDisplayed={1}
+        marginPagesDisplayed={4}
         pageCount={pageCount}
         previousLabel={<ArrowRight />}
         renderOnZeroPageCount={null}
         activeClassName="bg-black text-white "
         previousClassName="  rounded-md  p-2 border hover:border-2 hover:border-gray-500"
         nextClassName="  rounded-md  p-2 border hover:border-2 hover:border-gray-500"
-        pageClassName="hover:bg-gray-200  rounded-md  px-3 p-1"
+        pageClassName="hover:bg-gray-200  rounded-md  px-4 p-2"
       />
     </>
   );
