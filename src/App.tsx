@@ -50,22 +50,22 @@ function PaginatedItems({ itemsPerPage }) {
       <ReactPaginate
         breakLabel="..."
         nextLabel={<ArrowLeft />}
-        className="flex items-center justify-center gap-6"
+        className="flex items-center gap-3 justify-center"
         onPageChange={handlePageClick}
         pageRangeDisplayed={10}
         pageCount={pageCount}
         previousLabel={<ArrowRight />}
         renderOnZeroPageCount={null}
-        breakClassName="border"
-        breakLinkClassName="border"
-        containerClassName="border bg-green"
-        activeLinkClassName="border"
-        activeClassName="border "
-        disabledClassName="border"
-        disabledLinkClassName="border"
-        nextLinkClassName="border"
+        breakClassName=""
+        breakLinkClassName=""
+        containerClassName=""
+        activeLinkClassName=""
+        activeClassName="bg-black text-white "
+        disabledClassName=""
+        disabledLinkClassName=""
+        nextLinkClassName=""
         nextClassName="border"
-        pageClassName="hover:bg-gray-100  rounded-lg "
+        pageClassName="hover:bg-gray-200  rounded-md  py-1 px-3"
       />
     </>
   );
